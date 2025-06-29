@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FF5656"
+    tools:context=".explorePage">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/c" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#99D7FFFF"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:text="welcome"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <Button
+        android:id="@+id/back1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FF5656"
+        android:text="Log Out"
+        android:textColor="@color/white"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/back1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/appdevelopment"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/appdev" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/businessdevelopmentassociate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/businessdevelopmentassociate" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/contentwriting"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/contentwriting" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/cybersecurity"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/cybersecurity" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/datascience"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/datascience" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/digitalmarketing"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/digitalmarketing" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/digitalmediapromotion"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/digitalmediapromotion" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/fullstackdevelopment"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/fullstack" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/hr"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/hr" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/iot"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/iot" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/softwaredevelopment"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/softwaredev" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/uiuxdesign"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/uiuxdesign" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="25dp">
+
+                <ImageButton
+                    android:id="@+id/webdev"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/webdev" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/processassociate"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/processassociate" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/searchicon" />
+
+    <AutoCompleteTextView
+        android:id="@+id/searchtext"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:background="#80000000"
+        android:completionThreshold="1"
+        android:hint="Search"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="#80FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/search"
+        app:layout_constraintEnd_toStartOf="@+id/search"
+        app:layout_constraintTop_toTopOf="@+id/search" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
