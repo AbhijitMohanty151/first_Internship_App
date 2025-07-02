@@ -180,7 +180,7 @@ public class regester extends AppCompatActivity {
         internshipcourse.setOnClickListener(view -> {
             String[] courseNames = {
                     "App Development",
-                    "Business",
+                    "Business Development Associate",
                     "Content Writing",
                     "Cyber Security",
                     "Data Science",

@@ -4,13 +4,16 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class explorePage extends AppCompatActivity {
 
+    private ScrollView menubackground,menuforeground;
+    private TextView menuexit;
+    private ImageButton menu;
     private ImageButton appdevelopment;
     private ImageButton businessdevelopmentassociate;
     private ImageButton contentwriting;
@@ -43,7 +49,7 @@ public class explorePage extends AppCompatActivity {
     private String name,email;
     private String[] courseNames = {
             "App Development",
-            "Business",
+            "Business Development Associate",
             "Content Writing",
             "Cyber Security",
             "Data Science",
@@ -70,6 +76,15 @@ public class explorePage extends AppCompatActivity {
             return insets;
         });
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int screenWidth = displayMetrics.widthPixels;
+        int screenHeight = displayMetrics.heightPixels;
+
+        menuexit = findViewById(R.id.menuexit);
+        menu = findViewById(R.id.menu);
+        menubackground = findViewById(R.id.menubackground);
+        menuforeground = findViewById(R.id.menuforeground);
         logout = findViewById(R.id.back1);
         welcome = findViewById(R.id.welcome);
         appdevelopment = findViewById(R.id.appdevelopment);
@@ -97,6 +112,11 @@ public class explorePage extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, courseNames);
         searchText.setAdapter(adapter);
 
+        ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
+        params.width = (int) (screenWidth * 0.75);
+        params.height = screenHeight;
+        menuforeground.setLayoutParams(params);
+
         searchText.setOnItemClickListener((parent, view, position, id) -> {
             selectedCourse = parent.getItemAtPosition(position).toString();
             if (selectedCourse.isEmpty()) {
@@ -107,8 +127,8 @@ public class explorePage extends AppCompatActivity {
                 case "app development":
                     startExplore("appdevelopment");
                     break;
-                case "business":
-                    startExplore("business");
+                case "business development associate":
+                    startExplore("businessdevelopmentassociate");
                     break;
                 case "content writing":
                     startExplore("contentwriting");
@@ -167,8 +187,8 @@ public class explorePage extends AppCompatActivity {
                 case "app development":
                     startExplore("appdevelopment");
                     break;
-                case "business":
-                    startExplore("business");
+                case "business development associate":
+                    startExplore("businessdevelopmentassociate");
                     break;
                 case "content writing":
                     startExplore("contentwriting");
@@ -219,7 +239,7 @@ public class explorePage extends AppCompatActivity {
             builder.setTitle("Logging out");
             builder.setMessage("Are you sure you want to logout?");
             builder.setNegativeButton("Cancel", null);
-            builder.setPositiveButton("Ok", (dialog, which) -> {
+            builder.setPositiveButton("Yes", (dialog, which) -> {
                 finish();
             });
             builder.show();
@@ -335,6 +355,14 @@ public class explorePage extends AppCompatActivity {
             intent.putExtra("name",name);
             intent.putExtra("email",email);
             startActivity(intent);
+        });
+
+        menu.setOnClickListener(v -> {
+            menubackground.setVisibility(View.VISIBLE);
+        });
+
+        menuexit.setOnClickListener(v -> {
+            menubackground.setVisibility(View.GONE);
         });
 
     }

@@ -44,7 +44,7 @@ public class loginPage extends AppCompatActivity {
 
         login.setOnClickListener(view -> {
             String nameText=name.getText().toString().trim();
-            String emailText=email.getText().toString();
+            String emailText=email.getText().toString().trim();
             if(nameText.isEmpty()){
                 nameMessage.setText("*Name cannot be empty");
                 emailMessage.setText("");
