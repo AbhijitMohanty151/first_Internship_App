@@ -380,7 +380,6 @@ public class explorePage extends AppCompatActivity {
             View searchButton = findViewById(R.id.search); // your search button
 
             if (searchBar.getVisibility() == View.VISIBLE) {
-                searchButton.setBackgroundColor(Color.parseColor("#00000000"));
                 int[] locSearchBar = new int[2];
                 int[] locSearchButton = new int[2];
                 searchBar.getLocationOnScreen(locSearchBar);
@@ -400,6 +399,7 @@ public class explorePage extends AppCompatActivity {
                 // If the touch is NOT inside either view, hide the search bar
                 if (!inSearchBar && !inSearchButton) {
                     searchBar.setVisibility(View.GONE);
+                    searchButton.setBackgroundColor(Color.parseColor("#00000000"));
                 }
             }
         }
