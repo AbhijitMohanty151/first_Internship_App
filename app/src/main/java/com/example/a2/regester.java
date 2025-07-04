@@ -6,9 +6,13 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -29,7 +33,10 @@ import java.util.Locale;
 
 public class regester extends AppCompatActivity {
 
-    private Button submit,reset,back;
+    private ScrollView menubackground,menuforeground;
+    private TextView menuexit;
+    private ImageButton menu;
+    private Button submit,reset;
     private ImageButton getLocationBtn;
     private TextView outputtext;
     private EditText name,branch,email,college,phone,percent10,percent12,percentug,locationField,internshipcourse,internshipduration,paymentid;
@@ -49,13 +56,21 @@ public class regester extends AppCompatActivity {
 
         FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int screenWidth = displayMetrics.widthPixels;
+        int screenHeight = displayMetrics.heightPixels;
+
+        menuexit = findViewById(R.id.menuexit);
+        menu = findViewById(R.id.menu);
+        menubackground = findViewById(R.id.menubackground);
+        menuforeground = findViewById(R.id.menuforeground);
         name1=getIntent().getStringExtra("name");
         email1=getIntent().getStringExtra("email");
         internshipcourse1=getIntent().getStringExtra("category");
 
         submit = findViewById(R.id.submit);
         reset = findViewById(R.id.reset);
-        back = findViewById(R.id.back3);
         outputtext = findViewById(R.id.outputtext);
 
         name = findViewById(R.id.name1);
@@ -76,9 +91,10 @@ public class regester extends AppCompatActivity {
         internshipcourse.setText(internshipcourse1);
         email.setText(email1);
 
-        back.setOnClickListener(view -> {
-            finish();
-        });
+        ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
+        params.width = (int) (screenWidth * 0.75);
+        params.height = screenHeight;
+        menuforeground.setLayoutParams(params);
 
         reset.setOnClickListener(view -> {
             name.setText("");
@@ -228,6 +244,15 @@ public class regester extends AppCompatActivity {
                         });
             }
         });
+
+        menu.setOnClickListener(v -> {
+            menubackground.setVisibility(View.VISIBLE);
+        });
+
+        menuexit.setOnClickListener(v -> {
+            menubackground.setVisibility(View.GONE);
+        });
+
     }
     private String removeSpaces(String input) {
         int l=input.length();

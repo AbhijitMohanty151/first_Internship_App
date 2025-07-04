@@ -20,18 +20,6 @@
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/b" />
 
-    <ImageButton
-        android:id="@+id/menu"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@null"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -39,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
@@ -52,7 +40,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="370dp"
                 android:layout_height="240dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginBottom="50dp"
                 android:scaleType="fitCenter"
                 android:visibility="visible"
@@ -143,52 +131,6 @@
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="250dp" />
-        </LinearLayout>
-    </ScrollView>
-
-    <ScrollView
-        android:id="@+id/menubackground"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#B3000000"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ScrollView
-                android:id="@+id/menuforeground"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#000000">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp" />
-
-                    <TextView
-                        android:id="@+id/menuexit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:clickable="true"
-                        android:text="   &lt;"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-            </ScrollView>
         </LinearLayout>
     </ScrollView>
 

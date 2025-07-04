@@ -329,6 +329,7 @@
         android:completionThreshold="1"
         android:hint="Search"
         android:paddingHorizontal="10dp"
+        android:textColor="@color/white"
         android:textColorHint="#80FFFFFF"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/search"
@@ -352,7 +353,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#B3000000"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -361,8 +361,9 @@
         app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#000000"
             android:orientation="vertical">
 
             <ScrollView
@@ -388,8 +389,26 @@
                         android:clickable="true"
                         android:text="   &lt;"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
             </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/menulogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FF0000"
+                    android:text="Log out"
+                    android:textColor="@color/white"
+                    app:cornerRadius="15dp" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

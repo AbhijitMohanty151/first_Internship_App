@@ -2,7 +2,12 @@ package com.example.a2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,8 +18,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class explore2 extends AppCompatActivity {
 
-
-    private Button back,regester;
+    private ScrollView menubackground,menuforeground;
+    private TextView menuexit;
+    private ImageButton menu;
+    private Button regester;
     private String name;
     private String email;
     private String category;
@@ -31,14 +38,27 @@ public class explore2 extends AppCompatActivity {
             return insets;
         });
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int screenWidth = displayMetrics.widthPixels;
+        int screenHeight = displayMetrics.heightPixels;
+
+        menuexit = findViewById(R.id.menuexit);
+        menu = findViewById(R.id.menu);
+        menubackground = findViewById(R.id.menubackground);
+        menuforeground = findViewById(R.id.menuforeground);
         name = getIntent().getStringExtra("name");
         email = getIntent().getStringExtra("email");
         category = getIntent().getStringExtra("category");
 
-        back = findViewById(R.id.back2);
         regester = findViewById(R.id.regester);
         course = findViewById(R.id.course);
         outText = findViewById(R.id.outtext);
+
+        ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
+        params.width = (int) (screenWidth * 0.75);
+        params.height = screenHeight;
+        menuforeground.setLayoutParams(params);
 
         switch (category) {
             case "appdevelopment":
@@ -153,10 +173,13 @@ public class explore2 extends AppCompatActivity {
             startActivity(intent);
         });
 
-        back.setOnClickListener(v -> {
-            finish();
+        menu.setOnClickListener(v -> {
+            menubackground.setVisibility(View.VISIBLE);
         });
 
+        menuexit.setOnClickListener(v -> {
+            menubackground.setVisibility(View.GONE);
+        });
 
     }
 }

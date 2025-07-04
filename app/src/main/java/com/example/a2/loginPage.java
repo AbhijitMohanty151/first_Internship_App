@@ -3,12 +3,8 @@ package com.example.a2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,10 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class loginPage extends AppCompatActivity {
-
-    private ScrollView menubackground,menuforeground;
-    private TextView menuexit;
-    private ImageButton menu;
     private Button back,login;
     private EditText name,email;
     private TextView nameMessage,emailMessage;
@@ -44,21 +36,12 @@ public class loginPage extends AppCompatActivity {
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
 
-        menuexit = findViewById(R.id.menuexit);
-        menu = findViewById(R.id.menu);
-        menubackground = findViewById(R.id.menubackground);
-        menuforeground = findViewById(R.id.menuforeground);
         back=findViewById(R.id.back2);
         login=findViewById(R.id.login);
         name=findViewById(R.id.name);
         email=findViewById(R.id.email);
         nameMessage=findViewById(R.id.nameMessage);
         emailMessage=findViewById(R.id.emailMessage);
-
-        ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
-        params.width = (int) (screenWidth * 0.75);
-        params.height = screenHeight;
-        menuforeground.setLayoutParams(params);
 
         back.setOnClickListener(view -> {
             finish();
@@ -91,14 +74,6 @@ public class loginPage extends AppCompatActivity {
             intent.putExtra("name",nameText);
             intent.putExtra("email",emailText);
             startActivity(intent);
-        });
-        
-        menu.setOnClickListener(v -> {
-            menubackground.setVisibility(View.VISIBLE);
-        });
-
-        menuexit.setOnClickListener(v -> {
-            menubackground.setVisibility(View.GONE);
         });
 
     }
