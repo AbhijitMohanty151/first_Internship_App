@@ -1,5 +1,6 @@
 package com.example.a2;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -18,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class explore2 extends AppCompatActivity {
 
+    private Button menulogout;
     private ScrollView menubackground,menuforeground;
     private TextView menuexit;
     private ImageButton menu;
@@ -43,6 +45,7 @@ public class explore2 extends AppCompatActivity {
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
 
+        menulogout = findViewById(R.id.menulogout);
         menuexit = findViewById(R.id.menuexit);
         menu = findViewById(R.id.menu);
         menubackground = findViewById(R.id.menubackground);
@@ -57,7 +60,7 @@ public class explore2 extends AppCompatActivity {
 
         ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
         params.width = (int) (screenWidth * 0.75);
-        params.height = screenHeight;
+        params.height = screenHeight - (int)(110*getResources().getDisplayMetrics().density+0.5f);
         menuforeground.setLayoutParams(params);
 
         switch (category) {
@@ -164,6 +167,20 @@ public class explore2 extends AppCompatActivity {
                 outText.setText("The selected course is currently not recognized. Please go back and choose a valid course category.");
                 break;
         }
+
+        menulogout.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(explore2.this);
+            builder.setTitle("Logging out");
+            builder.setMessage("Are you sure you want to logout?");
+            builder.setNegativeButton("Cancel", null);
+            builder.setPositiveButton("Yes", (dialog, which) -> {
+                Intent intent = new Intent(explore2.this, loginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            });
+            builder.show();
+        });
 
         regester.setOnClickListener(v -> {
             Intent intent=new Intent(explore2.this,regester.class);

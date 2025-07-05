@@ -25,6 +25,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class explorePage extends AppCompatActivity {
 
+    private Button menulogout;
     private ScrollView menubackground,menuforeground;
     private TextView menuexit;
     private ImageButton menu;
@@ -81,6 +82,7 @@ public class explorePage extends AppCompatActivity {
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
 
+        menulogout = findViewById(R.id.menulogout);
         menuexit = findViewById(R.id.menuexit);
         menu = findViewById(R.id.menu);
         menubackground = findViewById(R.id.menubackground);
@@ -114,7 +116,7 @@ public class explorePage extends AppCompatActivity {
 
         ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
         params.width = (int) (screenWidth * 0.75);
-        params.height = screenHeight;
+        params.height = screenHeight - (int)(110*getResources().getDisplayMetrics().density+0.5f);
         menuforeground.setLayoutParams(params);
 
         searchText.setOnItemClickListener((parent, view, position, id) -> {
@@ -234,12 +236,29 @@ public class explorePage extends AppCompatActivity {
 
         });
 
+        menulogout.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(explorePage.this);
+            builder.setTitle("Logging out");
+            builder.setMessage("Are you sure you want to logout?");
+            builder.setNegativeButton("Cancel", null);
+            builder.setPositiveButton("Yes", (dialog, which) -> {
+                Intent intent = new Intent(explorePage.this, loginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            });
+            builder.show();
+        });
+
         logout.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(explorePage.this);
             builder.setTitle("Logging out");
             builder.setMessage("Are you sure you want to logout?");
             builder.setNegativeButton("Cancel", null);
             builder.setPositiveButton("Yes", (dialog, which) -> {
+                Intent intent = new Intent(explorePage.this, loginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 finish();
             });
             builder.show();

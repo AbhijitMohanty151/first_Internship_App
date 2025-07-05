@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class success extends AppCompatActivity {
 
+    private Button menulogout;
     private ScrollView menubackground,menuforeground;
     private TextView menuexit;
     private ImageButton menu;
@@ -40,6 +41,7 @@ public class success extends AppCompatActivity {
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
 
+        menulogout = findViewById(R.id.menulogout);
         menuexit = findViewById(R.id.menuexit);
         menu = findViewById(R.id.menu);
         menubackground = findViewById(R.id.menubackground);
@@ -62,7 +64,7 @@ public class success extends AppCompatActivity {
 
         ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
         params.width = (int) (screenWidth * 0.75);
-        params.height = screenHeight;
+        params.height = screenHeight - (int)(110*getResources().getDisplayMetrics().density+0.5f);
         menuforeground.setLayoutParams(params);
 
         back.setOnClickListener(view -> {
@@ -101,6 +103,20 @@ public class success extends AppCompatActivity {
 
         menuexit.setOnClickListener(v -> {
             menubackground.setVisibility(View.GONE);
+        });
+
+        menulogout.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(success.this);
+            builder.setTitle("Logging out");
+            builder.setMessage("Are you sure you want to logout?");
+            builder.setNegativeButton("Cancel", null);
+            builder.setPositiveButton("Yes", (dialog, which) -> {
+                Intent intent = new Intent(success.this, loginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            });
+            builder.show();
         });
 
     }

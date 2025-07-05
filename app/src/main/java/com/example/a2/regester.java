@@ -33,6 +33,7 @@ import java.util.Locale;
 
 public class regester extends AppCompatActivity {
 
+    private Button menulogout;
     private ScrollView menubackground,menuforeground;
     private TextView menuexit;
     private ImageButton menu;
@@ -41,6 +42,22 @@ public class regester extends AppCompatActivity {
     private TextView outputtext;
     private EditText name,branch,email,college,phone,percent10,percent12,percentug,locationField,internshipcourse,internshipduration,paymentid;
     private String name1,branch1,email1,college1,phone1,percent101,percent121,percentug1,location1,internshipcourse1,internshipduration1,paymentid1;
+    private String[] courseNames = {
+            "App Development",
+            "Business Development Associate",
+            "Content Writing",
+            "Cyber Security",
+            "Data Science",
+            "Digital Marketing",
+            "Digital Media Promotion",
+            "Full Stack Development",
+            "Human Resources (HR)",
+            "Internet of Things (IoT)",
+            "Software Development",
+            "UI/UX Design",
+            "Web Development",
+            "Process Associate"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +78,7 @@ public class regester extends AppCompatActivity {
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
 
+        menulogout = findViewById(R.id.menulogout);
         menuexit = findViewById(R.id.menuexit);
         menu = findViewById(R.id.menu);
         menubackground = findViewById(R.id.menubackground);
@@ -93,7 +111,7 @@ public class regester extends AppCompatActivity {
 
         ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
         params.width = (int) (screenWidth * 0.75);
-        params.height = screenHeight;
+        params.height = screenHeight - (int)(110*getResources().getDisplayMetrics().density+0.5f);
         menuforeground.setLayoutParams(params);
 
         reset.setOnClickListener(view -> {
@@ -153,6 +171,11 @@ public class regester extends AppCompatActivity {
             if(!(Integer.parseInt(percentug1)<=100)||!(Integer.parseInt(percentug1)>=0)){
                 outputtext.setText("*UG percentage should be between 0 and 100");
                 percentug.setText("");
+                return;
+            }
+            if(!checkCourse(internshipcourse1)){
+                outputtext.setText("*Select a course");
+                internshipcourse.setText("");
                 return;
             }
 
@@ -253,6 +276,28 @@ public class regester extends AppCompatActivity {
             menubackground.setVisibility(View.GONE);
         });
 
+        menulogout.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(regester.this);
+            builder.setTitle("Logging out");
+            builder.setMessage("Are you sure you want to logout?");
+            builder.setNegativeButton("Cancel", null);
+            builder.setPositiveButton("Yes", (dialog, which) -> {
+                Intent intent = new Intent(regester.this, loginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            });
+            builder.show();
+        });
+
+    }
+    private boolean checkCourse(String course) {
+        for (String c : courseNames) {
+            if (c.equalsIgnoreCase(course)) {
+                return true;
+            }
+        }
+        return false;
     }
     private String removeSpaces(String input) {
         int l=input.length();
