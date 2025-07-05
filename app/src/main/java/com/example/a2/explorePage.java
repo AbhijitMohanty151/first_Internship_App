@@ -136,7 +136,7 @@ public class explorePage extends AppCompatActivity {
 
         ViewGroup.LayoutParams params = menuforeground.getLayoutParams();
         params.width = (int) (screenWidth * 0.75);
-        params.height = screenHeight - (int)(110*getResources().getDisplayMetrics().density+0.5f);
+        params.height = screenHeight - (int)(45*getResources().getDisplayMetrics().density+0.5f);
         menuforeground.setLayoutParams(params);
 
         selectionmenu.setOnClickListener(v -> {
