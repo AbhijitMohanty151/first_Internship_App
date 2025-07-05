@@ -137,6 +137,202 @@
                         android:text="   &lt;"
                         android:textColor="@color/white" />
 
+                    <TextView
+                        android:id="@+id/selectionmenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="5dp"
+                        android:text="Selection menu"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/courses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="5dp"
+                        android:text="Courses"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/courslist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/appdevm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="App devlopment"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/businessdevelopmentassociatem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Business development associate"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/contentwritingm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Content writing"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/cybersecuritym"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Cyber security"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/datasciencem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Data science"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/digitalmarketingm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Digital marketing"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/digitalmediapromotionm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Digital media promotion"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/fullstackdevelopmentm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Full stack development"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hrm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Human resource (HR)"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/iotm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Internet of things (IOT)"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/softwaredevelopmentm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Software devlopment"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/uiuxdesignm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="UI/UX design"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/webdevm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Web devlopment"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/processassociatem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Process associate"
+                            android:textColor="@color/white"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="5dp"
+                        android:text="Register"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
             </ScrollView>
 
@@ -158,5 +354,6 @@
 
         </LinearLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

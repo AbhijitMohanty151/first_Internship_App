@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -18,7 +19,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class success extends AppCompatActivity {
-
+    private TextView selectionmenu,courses,register,appdevelopmentm,businessdevelopmentassociatem,contentwritingm,cybersecuritym,datasciencem,digitalmarketingm,digitalmediapromotionm,fullstackdevelopmentm,hrm,iotm,softwaredevelopmentm,uiuxdesignm,webdevm,processassociatem;
+    private LinearLayout courseslist;
     private Button menulogout;
     private ScrollView menubackground,menuforeground;
     private TextView menuexit;
@@ -40,6 +42,25 @@ public class success extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenWidth = displayMetrics.widthPixels;
         int screenHeight = displayMetrics.heightPixels;
+
+        selectionmenu = findViewById(R.id.selectionmenu);
+        courses = findViewById(R.id.courses);
+        register = findViewById(R.id.register);
+        appdevelopmentm = findViewById(R.id.appdevm);
+        businessdevelopmentassociatem = findViewById(R.id.businessdevelopmentassociatem);
+        contentwritingm = findViewById(R.id.contentwritingm);
+        cybersecuritym = findViewById(R.id.cybersecuritym);
+        datasciencem = findViewById(R.id.datasciencem);
+        digitalmarketingm = findViewById(R.id.digitalmarketingm);
+        digitalmediapromotionm = findViewById(R.id.digitalmediapromotionm);
+        fullstackdevelopmentm = findViewById(R.id.fullstackdevelopmentm);
+        hrm = findViewById(R.id.hrm);
+        iotm = findViewById(R.id.iotm);
+        softwaredevelopmentm = findViewById(R.id.softwaredevelopmentm);
+        uiuxdesignm = findViewById(R.id.uiuxdesignm);
+        webdevm = findViewById(R.id.webdevm);
+        processassociatem = findViewById(R.id.processassociatem);
+        courseslist = findViewById(R.id.courslist);
 
         menulogout = findViewById(R.id.menulogout);
         menuexit = findViewById(R.id.menuexit);
@@ -66,6 +87,29 @@ public class success extends AppCompatActivity {
         params.width = (int) (screenWidth * 0.75);
         params.height = screenHeight - (int)(110*getResources().getDisplayMetrics().density+0.5f);
         menuforeground.setLayoutParams(params);
+
+        selectionmenu.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explorePage.class);
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+        });
+
+        courses.setOnClickListener(v -> {
+            if(courseslist.getVisibility() == View.GONE){
+                courseslist.setVisibility(View.VISIBLE);
+            }
+            else{
+                courseslist.setVisibility(View.GONE);
+            }
+        });
+
+        register.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, regester.class);
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+        });
 
         back.setOnClickListener(view -> {
             Intent intent = new Intent(success.this, MainActivity.class);
