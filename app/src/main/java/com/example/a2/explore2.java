@@ -71,6 +71,7 @@ public class explore2 extends AppCompatActivity {
         menu = findViewById(R.id.menu);
         menubackground = findViewById(R.id.menubackground);
         menuforeground = findViewById(R.id.menuforeground);
+        
         name = getIntent().getStringExtra("name");
         email = getIntent().getStringExtra("email");
         category = getIntent().getStringExtra("category");
@@ -89,6 +90,7 @@ public class explore2 extends AppCompatActivity {
             intent.putExtra("name",name);
             intent.putExtra("email",email);
             startActivity(intent);
+            menubackground.setVisibility(View.GONE);
         });
 
         courses.setOnClickListener(v -> {
@@ -100,11 +102,195 @@ public class explore2 extends AppCompatActivity {
             }
         });
 
-        register.setOnClickListener(v -> {
-            Intent intent = new Intent(explore2.this, regester.class);
+        appdevelopmentm.setOnClickListener(v -> {
+            if(category.equals("appdevelopment")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "appdevelopment");
             intent.putExtra("name",name);
             intent.putExtra("email",email);
             startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        businessdevelopmentassociatem.setOnClickListener(v -> {
+            if(category.equals("businessdevelopmentassociate")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "businessdevelopmentassociate");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        contentwritingm.setOnClickListener(v -> {
+            if(category.equals("contentwriting")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "contentwriting");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        cybersecuritym.setOnClickListener(v -> {
+            if(category.equals("cybersecurity")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "cybersecurity");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        datasciencem.setOnClickListener(v -> {
+            if(category.equals("datascience")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "datascience");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        digitalmarketingm.setOnClickListener(v -> {
+            if(category.equals("digitalmarketing")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "digitalmarketing");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        digitalmediapromotionm.setOnClickListener(v -> {
+            if(category.equals("digitalmediapromotion")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "digitalmediapromotion");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        fullstackdevelopmentm.setOnClickListener(v -> {
+            if(category.equals("fullstackdevelopment")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "fullstackdevelopment");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        hrm.setOnClickListener(v -> {
+            if(category.equals("hr")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "hr");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        iotm.setOnClickListener(v -> {
+            if(category.equals("iot")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "iot");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        softwaredevelopmentm.setOnClickListener(v -> {
+            if(category.equals("softwaredevelopment")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "softwaredevelopment");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        uiuxdesignm.setOnClickListener(v -> {
+            if(category.equals("uiuxdesign")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "uiuxdesign");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        webdevm.setOnClickListener(v -> {
+            if(category.equals("webdev")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "webdev");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        processassociatem.setOnClickListener(v -> {
+            if(category.equals("processassociate")){
+                menubackground.setVisibility(View.GONE);
+                return;
+            }
+            Intent intent = new Intent(explore2.this, explore2.class);
+            intent.putExtra("category", "processassociate");
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+
+        register.setOnClickListener(v -> {
+            Intent intent = new Intent(explore2.this, regester.class);
+            intent.putExtra("category",course.getText().toString().trim());
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
         });
 
         switch (category) {

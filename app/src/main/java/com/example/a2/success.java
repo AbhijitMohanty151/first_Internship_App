@@ -93,8 +93,8 @@ public class success extends AppCompatActivity {
             intent.putExtra("name",name1);
             intent.putExtra("email",email1);
             startActivity(intent);
+            menubackground.setVisibility(View.GONE);
         });
-
         courses.setOnClickListener(v -> {
             if(courseslist.getVisibility() == View.GONE){
                 courseslist.setVisibility(View.VISIBLE);
@@ -104,11 +104,125 @@ public class success extends AppCompatActivity {
             }
         });
 
-        register.setOnClickListener(v -> {
-            Intent intent = new Intent(success.this, regester.class);
+        appdevelopmentm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "appdevelopment");
             intent.putExtra("name",name1);
             intent.putExtra("email",email1);
             startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        businessdevelopmentassociatem.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "businessdevelopmentassociate");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        contentwritingm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "contentwriting");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        cybersecuritym.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "cybersecurity");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        datasciencem.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "datascience");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        digitalmarketingm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "digitalmarketing");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        digitalmediapromotionm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "digitalmediapromotion");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        fullstackdevelopmentm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "fullstackdevelopment");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        hrm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "hr");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        iotm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "iot");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        softwaredevelopmentm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "softwaredevelopment");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        uiuxdesignm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "uiuxdesign");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        webdevm.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "webdev");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        processassociatem.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, explore2.class);
+            intent.putExtra("category", "processassociate");
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
+        });
+        register.setOnClickListener(v -> {
+            Intent intent = new Intent(success.this, regester.class);
+            intent.putExtra("category",internshipcourse1);
+            intent.putExtra("name",name1);
+            intent.putExtra("email",email1);
+            startActivity(intent);
+            menubackground.setVisibility(View.GONE);
         });
 
         back.setOnClickListener(view -> {
