@@ -28,6 +28,8 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
 import android.Manifest;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
@@ -416,6 +418,8 @@ public class regester extends AppCompatActivity {
                                     locationField.setText("Error getting location");
                                     e.printStackTrace();
                                 }
+                            } else {
+                                Toast.makeText(this, "Location not available", Toast.LENGTH_SHORT).show();
                             }
                         });
             }
